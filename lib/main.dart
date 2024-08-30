@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume_web/pages/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       title: 'Sagar Sinha',
-      home: const Text('Hello World!'),
+      home: const HomePage(),
     );
   }
 }
