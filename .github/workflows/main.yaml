@@ -17,10 +17,6 @@ jobs:
         with:
           flutter-version: '3.24.1'
     
-      - name: Install dependencies
-        run: |
-         flutter pub get
-
       - name: Analyze
         run: flutter analyze
 
