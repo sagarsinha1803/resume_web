@@ -1,13 +1,12 @@
-name: My Portfolio Webisite
+name: My Portfolio Web
 
-on:
+on :
   push:
-    branches:
-      - [feature/github-actions]
+    branches: [feature/githubactions]
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+  jobs:
+    build-project:
+      runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
@@ -17,15 +16,13 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.24.1'
-
-      - name: Install Dependencies
+    
+      - name: Install dependencies
         run: |
-          flutter pub get
+         flutter pub get
 
-      - name: Analyze Code
-        run: |
-          flutter analyze
+      - name: Analyze
+        run: flutter analyze
 
       - name: Build Web
-        run: |
-          flutter build web
+        run: flutter build web
