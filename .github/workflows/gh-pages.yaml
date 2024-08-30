@@ -25,6 +25,14 @@ jobs:
     needs: build-project
 
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+    
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.1'
+          
       - name: Deploy to GitHub Pages
         uses: bluefireteam/flutter-gh-pages@v8
         with:
