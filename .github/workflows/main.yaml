@@ -1,0 +1,36 @@
+name: My Portfolio Page
+
+on :
+  push:
+    branches: [feature/githubaction]
+
+jobs:
+  build-project:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+    
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.1'
+    
+      - name: Install dependencies
+        run: |
+         flutter pub get
+
+      - name: Analyze
+        run: flutter analyze
+
+  deploy-portfolio:
+    runs-on: ubuntu-latest
+    needs: build-project
+
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: bluefireteam/flutter-gh-pages@v8
+        with:
+          baseHref: /portfolio/
+          webRenderer: canvaskit
