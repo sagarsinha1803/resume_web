@@ -3,7 +3,7 @@ name: My Portfolio Webisite
 on:
   push:
     branches:
-      - feature/github-actions
+      - [feature/github-actions]
 
 jobs:
   build:
