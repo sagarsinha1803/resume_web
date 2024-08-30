@@ -1,4 +1,4 @@
-name: My Portfolio CI/CD
+name: My Portfolio Page
 
 on :
   push:
