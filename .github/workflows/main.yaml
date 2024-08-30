@@ -28,6 +28,7 @@ jobs:
         run: flutter build web
 
   deploy-portfolio:
+    runs-on: ubuntu-latest
     needs: build-project
 
     steps:
