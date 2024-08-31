@@ -20,5 +20,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: bluefireteam/flutter-gh-pages@v8
         with:
-          baseHref: /portfolio/
+          baseHref: /resume_web/
           webRenderer: canvaskit
