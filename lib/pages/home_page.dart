@@ -4,6 +4,7 @@ import 'package:resume_web/constants/size.dart';
 import 'package:resume_web/header_section/header_section.dart';
 import 'package:resume_web/header_section/mobile_view_drawer.dart';
 import 'package:resume_web/main_section/main_section.dart';
+import 'package:resume_web/project_section/project_tabview.dart';
 import 'package:resume_web/skill_section/skill_section.dart';
 
 class HomePage extends StatefulWidget {
@@ -85,14 +86,25 @@ Widget buildHomePageLayout({
                     scaffoldKey.currentState?.openEndDrawer(),
               ),
               MainSection(
+                key: navBarkeys[0],
                 constrainScreenMaxWidth: screenSize.width,
                 screenWidth: screenSize.width,
                 screenHeight: screenSize.height,
               ),
               SkillSection(
+                key: navBarkeys[1],
                 screenWidth: screenSize.width,
                 controller: animationController,
-              )
+              ),
+              SizedBox(
+                height: screenSize.height,
+                child: ProjectTabView(
+                  key: navBarkeys[2],
+                  constrainMaxWidth: constraints.maxWidth,
+                  screenHeight: screenSize.height,
+                  screenWidth: screenSize.width * 3,
+                ),
+              ),
             ],
           ),
         ),
