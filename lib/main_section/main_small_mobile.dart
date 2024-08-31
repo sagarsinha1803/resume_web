@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:resume_web/components/widgets.dart';
 import 'package:resume_web/constants/colors.dart';
 import 'package:resume_web/main_section/animation_intro.dart';
 
@@ -56,7 +57,11 @@ class MainSmallMobileView extends StatelessWidget {
           ),
           const SizedBox(
             height: 15,
-          )
+          ),
+          SizedBox(
+            width: 250,
+            child: downloadCvButton,
+          ),
         ],
       ),
     );
