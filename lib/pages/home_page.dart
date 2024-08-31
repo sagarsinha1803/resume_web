@@ -3,6 +3,7 @@ import 'package:resume_web/constants/colors.dart';
 import 'package:resume_web/constants/size.dart';
 import 'package:resume_web/header_section/header_section.dart';
 import 'package:resume_web/header_section/mobile_view_drawer.dart';
+import 'package:resume_web/main_section/main_section.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -74,6 +75,11 @@ Widget buildHomePageLayout({
                 onDrawerItemTap: () =>
                     scaffoldKey.currentState?.openEndDrawer(),
               ),
+              MainSection(
+                constrainScreenMaxWidth: screenSize.width,
+                screenWidth: screenSize.width,
+                screenHeight: screenSize.height,
+              )
             ],
           ),
         ),

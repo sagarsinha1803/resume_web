@@ -26,5 +26,11 @@ const Map<String, double> skillSectionSize = {
 };
 
 const Map<String, double> minWindowChangeSize = {
-  "desktop": 600.00,
+  "desktop": 590.00,
+};
+
+const Map<String, double> minWindowChangeSizeMainSection = {
+  "desktop": 700.00,
+  "tablet": 590.00,
+  "mobile": 390.00,
 };
