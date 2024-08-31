@@ -18,7 +18,7 @@ jobs:
           flutter-version: '3.24.1'
 
       - name: Deploy to GitHub Pages
-        uses: bluefireteam/flutter-gh-pages@v8
+        uses: bluefireteam/flutter-gh-pages@v7
         with:
           baseHref: /resume_web/
           webRenderer: canvaskit
