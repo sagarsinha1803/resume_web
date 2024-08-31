@@ -4,6 +4,7 @@ import 'package:resume_web/constants/size.dart';
 import 'package:resume_web/header_section/header_section.dart';
 import 'package:resume_web/header_section/mobile_view_drawer.dart';
 import 'package:resume_web/main_section/main_section.dart';
+import 'package:resume_web/skill_section/skill_section.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,6 +16,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   final _scrollController = ScrollController();
+  late AnimationController _controller;
   bool backToTop = false;
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final List<GlobalKey> navBarkeys = List.generate(4, (index) => GlobalKey());
@@ -27,6 +29,11 @@ class _HomePageState extends State<HomePage>
       });
     });
     super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    );
+    _controller.forward();
   }
 
   @override
@@ -37,6 +44,7 @@ class _HomePageState extends State<HomePage>
       scrollController: _scrollController,
       scaffoldKey: scaffoldKey,
       navBarkeys: navBarkeys,
+      animationController: _controller,
     );
   }
 }
@@ -48,6 +56,7 @@ Widget buildHomePageLayout({
   required ScrollController scrollController,
   required GlobalKey<ScaffoldState> scaffoldKey,
   required List<GlobalKey> navBarkeys,
+  required AnimationController animationController,
 }) {
   return LayoutBuilder(
     builder: (context, constraints) {
@@ -79,6 +88,10 @@ Widget buildHomePageLayout({
                 constrainScreenMaxWidth: screenSize.width,
                 screenWidth: screenSize.width,
                 screenHeight: screenSize.height,
+              ),
+              SkillSection(
+                screenWidth: screenSize.width,
+                controller: animationController,
               )
             ],
           ),

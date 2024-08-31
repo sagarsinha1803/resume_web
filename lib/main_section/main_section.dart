@@ -19,6 +19,7 @@ class MainSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (constrainScreenMaxWidth >= minWindowChangeSizeMainSection["tablet"]!) {
+      // Desktop/Tablet version
       return MainDesktopView(
         screenHeight: screenHeight,
         screenWidth: screenWidth,
@@ -26,11 +27,13 @@ class MainSection extends StatelessWidget {
     } else if (constrainScreenMaxWidth >=
             minWindowChangeSizeMainSection["mobile"]! &&
         constrainScreenMaxWidth < minWindowChangeSizeMainSection["tablet"]!) {
+      // Mobile version
       return MainMobileView(
         screenHeight: screenHeight,
         screenWidth: screenWidth,
       );
     } else {
+      // Small Mobile version
       return MainSmallMobileView(
         screenHeight: screenHeight,
         screenWidth: screenWidth,

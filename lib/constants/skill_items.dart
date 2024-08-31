@@ -1,23 +1,29 @@
 const List<Map> platformIcon = [
   {
     "img": "assets/icons8-web-96.png",
-    "title": "WEB DEV",
+    "title": "FRONTEND DEVELOPMENT",
     "percentage": 60,
+    "description":
+        "I have experience building good looking web or github pages using Flutter.",
   },
   {
     "img": "assets/icons8-programming-96.png",
-    "title": "BACKEND DEV",
+    "title": "BACKEND DEVELOPMENT",
     "percentage": 90,
+    "description":
+        "I have experience building RESTful APIs using Flask and Springboot.",
   },
   {
     "img": "assets/icons8-android-144.png",
-    "title": "ANDROID DEV",
+    "title": "ANDROID DEVELOPMENT",
     "percentage": 40,
+    "description": "I have experience building android apps using Flutter.",
   },
   {
     "img": "assets/icons8-desktop-96.png",
-    "title": "WINDOWS DEV",
-    "percentage": 40,
+    "title": "SCRIPTING",
+    "percentage": 100,
+    "description": "I have experience building scripts using Python.",
   },
 ];
 
@@ -25,12 +31,7 @@ const List<Map> skillList = [
   {
     "img": "assets/icons8-flutter-144.png",
     "title": "Flutter",
-    "percentage": 50
-  },
-  {
-    "img": "assets/icons8-dart-144.png",
-    "title": "Dart",
-    "percentage": 50,
+    "percentage": 60
   },
   {
     "img": "assets/icons8-python-144.png",
@@ -50,6 +51,16 @@ const List<Map> skillList = [
   {
     "img": "assets/icons8-docker-144.png",
     "title": "Docker",
+    "percentage": 50,
+  },
+  {
+    "img": "assets/icons8-docker-144.png",
+    "title": "CI/CD",
+    "percentage": 50,
+  },
+  {
+    "img": "assets/icons8-docker-144.png",
+    "title": "MySQL/Postgres",
     "percentage": 50,
   },
 ];
