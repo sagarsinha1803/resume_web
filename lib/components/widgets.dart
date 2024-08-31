@@ -1,5 +1,6 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:resume_web/constants/colors.dart';
 import 'package:resume_web/skill_section/tween_circular_widget.dart';
 
@@ -13,13 +14,17 @@ ElevatedButton downloadCvButton = ElevatedButton(
       ),
     ),
   ),
-  child: const Text(
+  child: Text(
     'Download CV',
-    style: TextStyle(
-      fontSize: 16,
-      fontWeight: FontWeight.w500,
+    style: GoogleFonts.patrickHandSc(
+      fontSize: 30,
       color: Colors.black,
     ),
+    // style: TextStyle(
+    //   fontSize: 16,
+    //   fontWeight: FontWeight.w500,
+    //   color: Colors.black,
+    // ),
   ),
 );
 

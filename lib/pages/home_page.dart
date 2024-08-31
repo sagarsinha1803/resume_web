@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:resume_web/constants/colors.dart';
 import 'package:resume_web/constants/size.dart';
+import 'package:resume_web/contact_section/contact_section.dart';
+import 'package:resume_web/footer_section/footer_section.dart';
 import 'package:resume_web/header_section/header_section.dart';
 import 'package:resume_web/header_section/mobile_view_drawer.dart';
 import 'package:resume_web/main_section/main_section.dart';
@@ -105,6 +107,14 @@ Widget buildHomePageLayout({
                   screenWidth: screenSize.width * 3,
                 ),
               ),
+              ContactSection(
+                key: navBarkeys[3],
+                screenWidth: screenSize.width,
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              const Footer(),
             ],
           ),
         ),
