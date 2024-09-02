@@ -3,9 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:resume_web/constants/colors.dart';
 import 'package:resume_web/skill_section/tween_circular_widget.dart';
+import 'dart:html';
 
 ElevatedButton downloadCvButton = ElevatedButton(
-  onPressed: () {},
+  onPressed: () {
+    AnchorElement anchorElement =
+        AnchorElement(href: '/lib/downloads/sagar-sinha-resume.pdf');
+    anchorElement.download = "sagar-sinha-resume.pdf";
+    anchorElement.click();
+  },
   style: ButtonStyle(
     backgroundColor: WidgetStateProperty.all(CustomColor.yellowPrimary),
     shape: WidgetStateProperty.all(

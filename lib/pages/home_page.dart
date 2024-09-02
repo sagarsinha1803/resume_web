@@ -39,6 +39,22 @@ class _HomePageState extends State<HomePage>
     _controller.forward();
   }
 
+  void scrollToSection(int navIndex) {
+    if (navIndex == 1) {
+      // reload animation
+      _controller.reset();
+      _controller.forward();
+    }
+    final key = navBarkeys[navIndex];
+    Scrollable.ensureVisible(
+      key.currentContext!,
+      duration: const Duration(
+        milliseconds: 800,
+      ),
+      curve: Curves.easeInOut,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -48,11 +64,11 @@ class _HomePageState extends State<HomePage>
       scaffoldKey: scaffoldKey,
       navBarkeys: navBarkeys,
       animationController: _controller,
+      scrollToSection: scrollToSection,
+      backToTop: backToTop,
     );
   }
 }
-
-void scrollToSection(int navIndex) {}
 
 Widget buildHomePageLayout({
   required Size screenSize,
@@ -60,6 +76,8 @@ Widget buildHomePageLayout({
   required GlobalKey<ScaffoldState> scaffoldKey,
   required List<GlobalKey> navBarkeys,
   required AnimationController animationController,
+  required void Function(int) scrollToSection,
+  required bool backToTop,
 }) {
   return LayoutBuilder(
     builder: (context, constraints) {
@@ -118,6 +136,25 @@ Widget buildHomePageLayout({
             ],
           ),
         ),
+        floatingActionButton: backToTop
+            ? Align(
+                alignment: Alignment.bottomLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 50),
+                  child: FloatingActionButton(
+                    backgroundColor: CustomColor.yellowPrimary.withOpacity(0.7),
+                    onPressed: () {
+                      scrollController.animateTo(
+                        scrollController.position.minScrollExtent,
+                        duration: const Duration(milliseconds: 800),
+                        curve: Curves.easeInOut,
+                      );
+                    },
+                    child: const Icon(Icons.arrow_upward),
+                  ),
+                ),
+              )
+            : null,
       );
     },
   );
