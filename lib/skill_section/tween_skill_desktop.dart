@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:resume_web/components/widgets.dart';
 import 'package:resume_web/constants/colors.dart';
-import 'package:resume_web/constants/skill_items.dart';
-import 'package:resume_web/skill_section/tween_linear_widget.dart';
+import 'package:resume_web/dto/skills_utils.dart';
 
 class TweenSkillDesktop extends StatelessWidget {
   final AnimationController controller;
@@ -39,38 +38,35 @@ class TweenSkillDesktop extends StatelessWidget {
               ),
             ),
             ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 500),
+              constraints: const BoxConstraints(maxWidth: 900),
               child: Wrap(
-                spacing: 1,
-                runSpacing: 1,
+                spacing: 2,
+                runSpacing: 2,
                 children: [
-                  for (int i = 0; i < platformIcon.length; i++)
-                    MouseRegion(
-                      cursor: SystemMouseCursors.click,
-                      child: flippingCardWidget(platformIcon[i], controller),
-                    ),
+                  for (int i = 0; i < skillUtilList.length; i++)
+                    skillCard(skillUtilList[i], controller),
                 ],
               ),
             ),
-            Wrap(
-              spacing: 10,
-              runSpacing: 10,
-              children: [
-                SizedBox(
-                  width: 400,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      for (int i = 0; i < skillList.length; i++)
-                        TweenLinerWidget(
-                          skillData: skillList[i],
-                          controller: controller,
-                        ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+            // Wrap(
+            //   spacing: 10,
+            //   runSpacing: 10,
+            //   children: [
+            //     SizedBox(
+            //       width: 400,
+            //       child: Column(
+            //         crossAxisAlignment: CrossAxisAlignment.center,
+            //         children: [
+            //           for (int i = 0; i < skillList.length; i++)
+            //             TweenLinerWidget(
+            //               skillData: skillList[i],
+            //               controller: controller,
+            //             ),
+            //         ],
+            //       ),
+            //     ),
+            //   ],
+            // ),
           ],
         ),
       ],

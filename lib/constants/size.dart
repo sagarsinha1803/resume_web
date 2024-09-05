@@ -36,5 +36,5 @@ const Map<String, double> minWindowChangeSizeMainSection = {
 
 const Map<String, double> minWindowChangeSizeSkillSection = {
   "tablet": 1400.00,
-  "mobile": 820.00,
+  "mobile": 600.00,
 };
