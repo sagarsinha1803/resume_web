@@ -28,7 +28,7 @@ class SkillSection extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 20),
             child: Text(
-              "What I can do ",
+              "Skill Sets",
               style: GoogleFonts.sriracha(
                 color: CustomColor.whitePrimary,
                 fontSize: 40,

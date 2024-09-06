@@ -7,6 +7,7 @@ import 'package:resume_web/header_section/header_section.dart';
 import 'package:resume_web/header_section/mobile_view_drawer.dart';
 import 'package:resume_web/main_section/main_section.dart';
 import 'package:resume_web/project_section/project_tabview.dart';
+import 'package:resume_web/service_section/service_section.dart';
 import 'package:resume_web/skill_section/skill_section.dart';
 
 class HomePage extends StatefulWidget {
@@ -110,6 +111,10 @@ Widget buildHomePageLayout({
                 constrainScreenMaxWidth: screenSize.width,
                 screenWidth: screenSize.width,
                 screenHeight: screenSize.height,
+              ),
+              ServiceSection(
+                screenHeight: screenSize.height,
+                screenWidth: screenSize.width,
               ),
               SkillSection(
                 key: navBarkeys[1],

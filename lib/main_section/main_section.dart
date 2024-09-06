@@ -21,7 +21,7 @@ class MainSection extends StatelessWidget {
     if (constrainScreenMaxWidth >= minWindowChangeSizeMainSection["tablet"]!) {
       // Desktop/Tablet version
       return MainDesktopView(
-        screenHeight: screenHeight,
+        screenHeight: screenHeight + 100,
         screenWidth: screenWidth,
       );
     } else if (constrainScreenMaxWidth >=
@@ -29,13 +29,13 @@ class MainSection extends StatelessWidget {
         constrainScreenMaxWidth < minWindowChangeSizeMainSection["tablet"]!) {
       // Mobile version
       return MainMobileView(
-        screenHeight: screenHeight,
+        screenHeight: screenHeight - 100,
         screenWidth: screenWidth,
       );
     } else {
       // Small Mobile version
       return MainSmallMobileView(
-        screenHeight: screenHeight,
+        screenHeight: screenHeight - 100,
         screenWidth: screenWidth,
       );
     }
