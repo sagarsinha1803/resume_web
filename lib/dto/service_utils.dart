@@ -12,7 +12,7 @@ class ServiceUtils {
 
 List<ServiceUtils> serviceUtilsList = [
   ServiceUtils(
-    image: "assets/icons8-web-96.png",
+    image: "assets/animation/ui_animation.json",
     title: "FLUTTER UI SERVICES",
     description: r"""
         <ul>
@@ -27,7 +27,7 @@ List<ServiceUtils> serviceUtilsList = [
         """,
   ),
   ServiceUtils(
-    image: "assets/icons8-programming-96.png",
+    image: "assets/animation/backend_service_lottie.json",
     title: "BACKEND SERVICES",
     description: r"""
         <ul>
@@ -46,7 +46,7 @@ List<ServiceUtils> serviceUtilsList = [
         """,
   ),
   ServiceUtils(
-    image: "assets/icons8-desktop-96.png",
+    image: "assets/animation/scripting_service.json",
     title: "SCRIPTING SERVICES",
     description: r"""
         <ul>

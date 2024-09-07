@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 import 'package:resume_web/constants/colors.dart';
 import 'package:resume_web/dto/service_utils.dart';
 
@@ -43,10 +44,15 @@ class ServiceCard extends StatelessWidget {
                           shape: BoxShape.circle,
                           color: Color(0xFF1D1B20),
                         ),
-                        child: Image.asset(
+                        // child: Image.asset(
+                        //   service.image,
+                        //   height: 150,
+                        //   width: 150,
+                        // ),
+                        child: Lottie.asset(
                           service.image,
-                          height: 150,
                           width: 150,
+                          height: 150,
                         ),
                       ),
                     ),
