@@ -58,7 +58,7 @@ class _ProjectTabViewState extends State<ProjectTabView>
             ),
           ),
           const SizedBox(
-            height: 10,
+            height: 50,
           ),
           SizedBox(
             // height: 50,

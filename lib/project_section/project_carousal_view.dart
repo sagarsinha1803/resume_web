@@ -25,6 +25,7 @@ class ProjectsCarouselView extends StatefulWidget {
 
 class _ProjectsCarouselViewState extends State<ProjectsCarouselView> {
   int currentIndex = 0;
+  int hoveredIndex = -1;
   @override
   Widget build(BuildContext context) {
     List<int> zerosArray = List<int>.filled(
@@ -47,13 +48,50 @@ class _ProjectsCarouselViewState extends State<ProjectsCarouselView> {
                 zerosArray[index] = (initIndex + index) % widget.projectCount;
               },
             );
-            return Wrap(
-              spacing: 100,
-              children: zerosArray.map((idx) {
-                return ProjectCardWidget(
-                  projectUtil: widget.projects[idx],
-                );
-              }).toList(),
+            return Center(
+              child: Wrap(
+                spacing: 100,
+                children: zerosArray.map((idx) {
+                  return AnimatedScale(
+                    scale: hoveredIndex == idx ? 1.4 : 1.0,
+                    duration: const Duration(milliseconds: 200),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 50),
+                      child: MouseRegion(
+                        onEnter: (_) {
+                          setState(() {
+                            hoveredIndex = idx;
+                          });
+                        },
+                        onExit: (_) {
+                          setState(() {
+                            hoveredIndex = -1;
+                          });
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: CustomColor.bglight2,
+                            boxShadow: hoveredIndex == idx
+                                ? [
+                                    BoxShadow(
+                                      color: CustomColor.yellowSecondary.withOpacity(0.5),
+                                      spreadRadius: 4,
+                                      blurRadius: 7,
+                                      offset: const Offset(0, 3),
+                                    ),
+                                  ]
+                                : [],
+                          ),
+                          child: ProjectCardWidget(
+                            projectUtil: widget.projects[idx],
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                }).toList(),
+              ),
             );
           },
           options: CarouselOptions(
